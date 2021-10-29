@@ -8,5 +8,92 @@ import java.util.Scanner;
  */
 public class Conditions
 {
+    public static void ifExample()
+    {
+        // model a coin flip; 1: heads, 0: tails
+        int coinFlip = (int)(Math.random() * 2);
+        
+        /*
+         * if statement
+         *  Statements in the if block are executed if the conditional expression is true.
+         *  
+         *  Conditional expressions evaluate to either true or false.
+         *  The conditional expression must go inside of parentheses.
+         *  Statements are group by blocks (i.e., { }), not by indentation like in Python.
+         *  There is no colon after the condition expression, unlike Python.
+         */
+        if(coinFlip == 1)
+        {
+            System.out.println("Coin is heads!");
+        }
+        
+        /*
+         * if-else statement
+         *  The else block is executed if the condition evaluates to false
+         */
+        if(coinFlip == 1)
+        {
+            System.out.println("Coin is heads!");
+        }
+        else
+        {
+            System.out.println("Coin is tails!");
+            System.out.println("Better luck next time...");
+        }
+        
+        // model the roll of a four-sided die [1-4]
+        int dieRoll = (int)(Math.random() * 4) + 1;
+        
+        /*
+         * if-else if-else statement
+         *  In Java, "else if" is used instead of "elif" like Python.
+         */
+        if(dieRoll == 1)
+        {
+            System.out.println("rolled a one");
+        }
+        else if(dieRoll == 2)
+        {
+            System.out.println("rolled a two");
+        }
+        else if(dieRoll == 3)
+        {
+            System.out.println("rolled a three");
+        }
+        else
+        {
+            System.out.println("rolled a four");
+        }
+        
+        System.out.println("done!");
+    }
     
+    public static void stringExample()
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter two words: ");
+        String str1 = s.next();
+        String str2 = s.next();
+        
+        /*
+         * The equality operator (==) returns true if the two variables (e.g., str1 and str2)
+         *      contain the same value. For varialbes of a class type, including Strings,
+         *      this means that they contain the same reference. That is, they refer to the
+         *      same object in memory, not that two Strings have the same sequence of characters.
+         */
+        if(str1 == str2)
+        {
+            System.out.println("strings are equal");
+        }
+        else
+        {
+            System.out.println("strings are not equal");
+        }
+    }
 }
+
+
+
+
+
+
