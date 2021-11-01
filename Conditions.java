@@ -66,6 +66,15 @@ public class Conditions
         }
         
         System.out.println("done!");
+        
+        /*
+         * { } are not required for a single statement.
+         *      However, they are always a good idea.
+         *      Leaving them out can lead to bugs like this:
+         */
+        if(coinFlip == 0)
+            System.out.println("Coin is tails!");
+            System.out.println("Better luck next time...");
     }
     
     public static void stringExample()
@@ -83,11 +92,55 @@ public class Conditions
          */
         if(str1 == str2)
         {
+            System.out.println("string references are equal");
+        }
+        else
+        {
+            System.out.println("string references are not equal");
+        }
+        
+        /*
+         * The equals method returns true if the two objects referened by the variables
+         *      are "equal". What "equals" means is defined by the class. For strings, it
+         *      means that the two objects have the same sequence of characters.
+         */
+        if(str1.equals(str2))
+        {
             System.out.println("strings are equal");
         }
         else
         {
             System.out.println("strings are not equal");
+        }
+        
+        /*
+         * We will determine which string comes first lexicographically using the
+         *      compareTo method of the String class.
+         *      
+         *  compareTo returns an int value:
+         *      0:      if the strings are equal (same sequence of characters)
+         *      < 0:    if str1 < str2 lexicographically
+         *      > 0:    if str1 > str2 lexicographically
+         */
+        int result = str1.compareTo(str2);
+        
+        String firstStr = null;
+        if(result < 0)
+        {
+            firstStr = str1;
+        }
+        else if(result > 0)
+        {
+            firstStr = str2;
+        }
+        
+        if(firstStr != null)
+        {
+            System.out.println("The first string is: " + firstStr);
+        }
+        else
+        {
+            System.out.println("strings are equal");
         }
     }
 }
