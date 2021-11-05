@@ -95,15 +95,76 @@ public class Iterations
     
     public static void offByOne()
     {
+        /*
+         * The infamous off-by-one error is common with for loops
+         *      executing one too many or one too few times.
+         *      
+         *  Carefully ask:  should the initial value start at 0 or 1?
+         *                  should the condition be < or <= ?
+         *                  
+         *      "Think! Don't compile and try at random!"
+         *      
+         *  By convention, for simple for loops, we start at 0 and we use <
+         */
         // we want to print five "*"
         for(int i = 0;                      // initialization
-                i <= 5;                     // condition
+                i <= 5; // should be i < 5  // condition
                 i++)                        // update the loop variable
         {
             System.out.println("*");        // body
         }
         
         System.out.println("done");
+    }
+    
+    public static void doExample()
+    {
+        /*
+         * do loop (do-while loop):
+         * 
+         *      1. executes the body of the loop
+         *      2. evaluates the condition:
+         *          if true, executes the body of the loop again
+         *          if false, continues execution after the loop
+         */
+        
+        int count = 1;                      // initialization
+        
+        do
+        {
+            System.out.println(count);      // body
+            
+            count++;                        // update the loop variable
+        }
+        while(count <= 5);                  // condition
+        
+        System.out.println("done");
+    }
+    
+    public static int sum()
+    {
+        Scanner s = new Scanner(System.in);
+        
+        int sum = 0;
+        int value;
+        
+        do
+        {
+            System.out.print("enter a positive integer (-1 to quit): ");
+            
+            /*
+             * Sentinel variable
+             *      Value (e.g., -1) used to terminate the loop.
+             *      It is often entered by a user.
+             */
+            value = s.nextInt();
+            
+            // this is a bug! sum is 1 less than it should be
+            sum += value;
+        }
+        while(value != -1);
+        
+        return sum;
     }
 }
 
