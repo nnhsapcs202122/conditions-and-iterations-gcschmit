@@ -105,7 +105,28 @@ public class CommonLoopAlgorithms
      */
     public static int compareAdjacent()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+        int i = 0;
+        String word1 = s.next();
+        String word2 = s.next();
+        int x = 0;
+        while(i == 0)
+        {
+            if(word1.compareTo(word2) == 0)
+            {
+                System.out.println("Words are equal");
+                i++;
+            }
+            else
+            {
+                //word1 = s.next();
+                word1 = word2;
+                word2 = s.next();
+
+                x++;
+            }
+        }
+        return x;
     }
 
     /*
