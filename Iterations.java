@@ -159,8 +159,11 @@ public class Iterations
              */
             value = s.nextInt();
             
-            // this is a bug! sum is 1 less than it should be
-            sum += value;
+            if(value != -1)
+            {
+                // this was a bug! sum is 1 less than it should be
+                sum += value;
+            }
         }
         while(value != -1);
         
