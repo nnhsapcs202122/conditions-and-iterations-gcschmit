@@ -10,7 +10,21 @@ public class CommonLoopAlgorithms
      */
     public static int countMatchesForLength()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+        String word = new String();
+        int wordsGreaterThanFour = 0;
+        do
+        {
+            System.out.print("Enter a series of words (type quit to quit): ");
+            word = s.next();
+
+            if (word.length() > 4)
+            {
+                wordsGreaterThanFour++;
+            }
+        }
+        while (!word.equals("quit"));
+        return wordsGreaterThanFour;
     }
 
     /*
