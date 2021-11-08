@@ -36,7 +36,7 @@ public class CommonLoopAlgorithms
     }
 
     /*
-     * Loop Algorithm #4: Reserve String
+     * Loop Algorithm #4: Reverse String
      * reads one word
      * reverses the characters in the word
      * @return a new string with the characters reversed
