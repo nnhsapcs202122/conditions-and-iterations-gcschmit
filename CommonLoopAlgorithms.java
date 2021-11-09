@@ -31,22 +31,48 @@ public class CommonLoopAlgorithms
      * Loop Algorithm #2: Count Matches for Prefix
      * reads a series of words (ends with "quit")
      * counts the number of words that start with the substring "con"
-     * @return the number of words  that start with the substring "con"
+     * @return the number of words that start with the substring "con"
      */
     public static int countMatchesForPrefix()
     {
-        return 0;
+        String compare = "con";
+        String word = "";
+        int num = 0;
+        Scanner s = new Scanner(System.in);
+
+        while(!word.equals("quit"))
+        {
+            System.out.print("Enter an all lowercase word, type quit to exit: ");
+            word = s.next();
+            if(word.substring(0,3).equals(compare))
+            {
+                num++;
+            }
+        }
+        return num;
     }
 
     /*
      * Loop Algorithm #3: Count Matches for Suffix
      * reads a series of words (ends with "quit")
      * counts the number of words that end with the substring "est"
-     * @return the number of words  that end with the substring "est"
+     * @return the number of words that end with the substring "est"
      */
     public static int countMatchesForSuffix()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+        String w = null;
+        int estCount = 0;
+        do {
+            System.out.print("Enter a word (type quit to quit): ");
+            w = s.next();
+            if(w.length() >= 3 && w.substring(w.length() - 3).equals("est")) {
+                estCount ++;
+            }
+        }
+        while(!w.equals("quit"));
+        System.out.println(estCount);
+        return estCount;
     }
 
     /*
@@ -57,7 +83,19 @@ public class CommonLoopAlgorithms
      */
     public static String reverseWord()
     {
-        return "";
+        Scanner s= new Scanner(System.in);
+        String reversedWord = s.nextLine();
+        String newWord = "";
+        int nerds = reversedWord.length();
+        for(int i = 1;           // initialization
+                i <= nerds;           // condition
+                i++)
+        {  String len = reversedWord.substring(nerds - i,nerds - i + 1);
+
+            newWord += len;
+        }
+        System.out.print(" The reversed word is : " + newWord);
+        return newWord;
     }
 
     /*
@@ -67,7 +105,21 @@ public class CommonLoopAlgorithms
      */
     public static int compareAdjacent()
     {
-        return 0;
+
+        Scanner s = new Scanner(System.in);
+        System.out.print("enter a word: ");
+        String word1 = "";
+        String word2 = s.next();
+        int uniqueWordCount = 0;
+        while(!word1.equals(word2))
+        {
+            System.out.println("enter another word: ");
+            word1 = word2;
+            word2 = s.next();
+            uniqueWordCount++;
+        }
+        return uniqueWordCount;
+
     }
 
     /*
@@ -79,7 +131,28 @@ public class CommonLoopAlgorithms
      */
     public static String promptUntilMatch()
     {
-        return "";
+        Scanner s = new Scanner(System.in);
+        int result;
+        System.out.println("Enter a word: ");
+        String word = s.next();
+        result = word.compareTo("north");
+        System.out.println(result);
+
+        /*
+         * prompt until condition: (word.length() > 6) && (result > 0)
+         * the while condition negates the prompt until condition
+         * !((word.length() > 6) && (result > 0))
+         * DeMorgan's Law!
+         * !(word.length() > 6) || !(result > 0)
+         * (word.length() <= 6) || (result <= 0)
+         */
+        while(word.length() <= 6 || result <= 0){
+            System.out.println("Enter a word: ");   
+            word = s.next();
+            result = word.compareTo("north");
+        }
+
+        return word;
     }
 
     /*
