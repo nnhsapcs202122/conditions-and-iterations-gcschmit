@@ -62,23 +62,25 @@ public class CommonLoopAlgorithms
      */
     public static int countMatchesForSuffix()
     {
-        Scanner s = new Scanner(System.in);
-        String word;
-        int count = 0;
-        do
         {
-            word = s.next();
-            String checkForEst = word.substring(word.length()-3);
-            if (checkForEst.equals("est"))
+            Scanner s = new Scanner(System.in);
+            String word;
+            int count = 0;
+            System.out.println("Type in the words or type 'quit' to quit");
+            do
             {
-                count++;
+                word = s.next();
+                String checkForEst = word.substring(word.length()-3);
+                if (checkForEst.equals("est"))
+                {
+                    count++;
+                }
             }
+            while(!word.equals("quit"));
+            return count;
         }
-        while(!word.equals("quit"));
-        return count;
 
     }
-
     /*
      * Loop Algorithm #4: Reverse String
      * reads one word
@@ -106,16 +108,16 @@ public class CommonLoopAlgorithms
     public static int compareAdjacent()
     {
         Scanner s = new Scanner(System.in);
-        int i = 0;
+        boolean isDone = false;
         String word1 = s.next();
         String word2 = s.next();
         int x = 0;
-        while(i == 0)
+        while(!isDone)
         {
             if(word1.compareTo(word2) == 0)
             {
                 System.out.println("Words are equal");
-                i++;
+                isDone = true;
             }
             else
             {
