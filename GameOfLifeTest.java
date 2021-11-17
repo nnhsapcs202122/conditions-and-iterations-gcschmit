@@ -1,9 +1,9 @@
 
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import info.gridworld.actor.Actor;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 /**
  * The test class GameOfLifeTest.
@@ -25,7 +25,7 @@ public class GameOfLifeTest
      *
      * Called before every test case method.
      */
-    @Before
+    @BeforeEach
     public void setUp()
     {
     }
@@ -35,7 +35,7 @@ public class GameOfLifeTest
      *
      * Called after every test case method.
      */
-    @After
+    @AfterEach
     public void tearDown()
     {
     }
@@ -73,11 +73,11 @@ public class GameOfLifeTest
                         (row == 2 && col == 1) ||
                         (row == 2 && col == 2))
                 {
-                    assertTrue("expected alive cell at (" + row + ", " + col + ")", isAlive);
+                    assertTrue(isAlive, "expected alive cell at (" + row + ", " + col + ")");
                 }
                 else // else, the cell should be dead; assert that the actor is null
                 {
-                    assertFalse("expected dead cell at (" + row + ", " + col + ")", isAlive);
+                    assertFalse(isAlive, "expected dead cell at (" + row + ", " + col + ")");
                 }
             }
         }
@@ -119,11 +119,11 @@ public class GameOfLifeTest
                 if(     (row == 2 && col == 1) ||
                         (row == 2 && col == 2))
                 {
-                    assertTrue("expected alive cell at (" + row + ", " + col + ")", isAlive);
+                    assertTrue(isAlive, "expected alive cell at (" + row + ", " + col + ")");
                 }
                 else // else, the cell should be dead; assert that the actor is null
                 {
-                    assertFalse("expected dead cell at (" + row + ", " + col + ")", isAlive);
+                    assertFalse(isAlive, "expected dead cell at (" + row + ", " + col + ")");
                 }
             }
         }
