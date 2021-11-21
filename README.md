@@ -6,8 +6,12 @@ Unit 3: Conditions and Iterations
 Your Game of Life Lab Requirements
 ----
 
-!!! add your requirements here...
-
+* Live cells are instances of the Rock class.
+* Dead cells are empty (no Rock)
+* The time interval between generations is one second.
+* The grid will be 10 x 10
+* It will display the glider pattern: https://www.conwaylife.com/wiki/Glider
+* The game will run for 10 generations
 
 
 Game of Life Lab
